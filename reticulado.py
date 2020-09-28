@@ -1,9 +1,3 @@
-
-#PARTE RETICULADO
-#GRUPO 6
-
-#-------------------------------------------------------------------------
-
 import numpy as np
 from barra import Barra
 class Reticulado(object):
@@ -68,8 +62,17 @@ class Reticulado(object):
         """Implementar"""
         return
 
+    def _str_(self):
+        s = "nodos:\n"
+        for i in range(len(self.xyz)):
+            s+=f'{i} : ({self.obtener_coordenada_nodal(i)})\n'
+        s += "barras:\n"
+        for i in range(len(self.barras)):
+            s+=f'{i} : {self.barras[i].ni,self.barras[i].nj}\n'
+        s+=f"peso_total = {self.calcular_peso_total()}"
+        return s
 
-#-------------------------------------------------------------------------
+
 
 
 
